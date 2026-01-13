@@ -1,0 +1,28 @@
+apiVersion: v2
+name: openg2p-gen2-master-data
+description: A Helm chart for OpenG2P Gen2 Master Data Service
+type: application
+version: 1.0.0
+dependencies:
+- name: common
+  repository: https://openg2p.github.io/openg2p-helm
+  version: 2.30.0
+- name: postgres-init
+  version: 0.0.0-develop
+  repository: https://openg2p.github.io/openg2p-helm
+  condition: postgres-init.enabled
+- name: redis
+  version: 19.6.4
+  repository: https://openg2p.github.io/openg2p-helm
+  condition: redis.enabled
+icon: https://openg2p.github.io/openg2p-helm/openg2p-logo.png
+keywords:
+  - openg2p
+  - gen2-master-data
+maintainers:
+  - email: info@openg2p.org
+    name: OpenG2P
+icon: https://openg2p.github.io/openg2p-helm/openg2p-logo.png
+annotations:
+  catalog.cattle.io/display-name: "OpenG2P Gen2 Master Data"
+  openg2p.org/add-to-rancher: ""
