@@ -1,4 +1,4 @@
-{{- $values := .Values.gen2MasterData -}}
+{{- $values := .Values.masterDataAPI -}}
 {{- $context := dict "Values" (merge (deepCopy $values) (dict "global" .Values.global)) "Chart" .Chart "Release" .Release "Files" .Files "Capabilities" .Capabilities -}}
 {{- with $context -}}
 apiVersion: v1
