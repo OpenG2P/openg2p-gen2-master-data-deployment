@@ -57,7 +57,7 @@ masterDataAPI:
     runAsUser: 1001
     runAsNonRoot: true
   
-  openapiRootPath: /api/master-data
+  openapiRootPath: /
   
   service:
     type: ClusterIP
