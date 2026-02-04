@@ -1,6 +1,6 @@
 global:
   masterDataHostname: master-data.qa.openg2p.org
- 
+
   # Database
   postgresqlHost: commons-postgresql
   # Following general Postgres conventions of lower case
@@ -53,9 +53,9 @@ masterDataAPI:
     enabled: false
     runAsUser: 1001
     runAsNonRoot: true
-  
+
   openapiRootPath: /
-  
+
   service:
     type: ClusterIP
     port: 80
@@ -82,7 +82,7 @@ masterDataAPI:
       tls:
         mode: SIMPLE
         credentialName: ""
-  
+
   envVars:
     GEN2_MASTER_DATA_API_DB_HOSTNAME: '{{ .Values.global.postgresqlHost }}'
     GEN2_MASTER_DATA_API_DB_DBNAME: '{{ tpl .Values.global.masterDataDB $ }}'
@@ -90,13 +90,13 @@ masterDataAPI:
     GEN2_MASTER_DATA_API_DB_USERNAME: '{{ tpl .Values.global.masterDataDBUser $ }}'
     GEN2_MASTER_DATA_API_PORT: '{{ .Values.containerPort }}'
     GEN2_MASTER_DATA_API_OPENAPI_ROOT_PATH: '{{ .Values.openapiRootPath }}'
-    
+
   envVarsFrom:
     GEN2_MASTER_DATA_API_DB_PASSWORD:
       secretKeyRef:
         name: '{{ tpl .Values.global.masterDataDBSecret $ }}'
         key: '{{ tpl .Values.global.masterDataDBUserPasswordKey $ }}'
-    
+
 
   startupProbe:
     enabled: true
@@ -128,7 +128,7 @@ masterDataAPI:
     timeoutSeconds: 5
     failureThreshold: 6
     successThreshold: 1
-  
+
   postgresCheckerInit:
     enabled: true
     image:

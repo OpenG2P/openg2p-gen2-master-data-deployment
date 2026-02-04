@@ -16,19 +16,19 @@ questions:
 - variable: global.masterDataDB
   description: Master Data Database
   type: string
-  label: Master Data Database 
+  label: Master Data Database
   group: Master Data Database
 
 - variable: global.masterDataDBUser
   description: Master Data database user
   type: string
-  label: Master Data Database User 
+  label: Master Data Database User
   group: Master Data Database
 
 - variable: global.masterDataDBSecret
   description: Master Data database user Kubernetes secret
   type: string
-  label: Master Data Database User Secret 
+  label: Master Data Database User Secret
   group: Master Data Database
 
 - variable: global.masterDataDBUserPasswordKey
@@ -36,4 +36,3 @@ questions:
   type: string
   label: Master Data Database User Password Key
   group: Master Data Database
-
