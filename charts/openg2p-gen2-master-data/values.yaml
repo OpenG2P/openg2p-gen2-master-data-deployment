@@ -143,5 +143,4 @@ masterDataAPI:
     containerSecurityContext:
       enabled: false
 
-  postgresqlInstallationName: '{{ .Release.Name }}-postgresql'
   containerPort: 8000
