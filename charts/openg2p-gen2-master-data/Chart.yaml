@@ -11,10 +11,6 @@ dependencies:
   version: 1.1.0
   repository: https://openg2p.github.io/openg2p-helm
   condition: postgres-init.enabled
-- name: redis
-  version: 19.6.4
-  repository: https://openg2p.github.io/openg2p-helm
-  condition: redis.enabled
 icon: https://openg2p.github.io/openg2p-helm/openg2p-logo.png
 keywords:
   - openg2p

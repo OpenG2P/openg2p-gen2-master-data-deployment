@@ -10,9 +10,6 @@ global:
   masterDataDBSecret: '{{ .Release.Name }}'
   masterDataDBUserPasswordKey: '{{ .Release.Name }}-db-user'
 
-  # Redis
-  redisInstallationName: '{{ .Release.Name }}-redis-master'
-
 postgres-init:
   enabled: true
   postgresql:
