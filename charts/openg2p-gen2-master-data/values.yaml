@@ -1,17 +1,17 @@
 global:
   masterDataHostname: gen2-master-data.dev.openg2p.org
-
+ 
   # Database
   postgresqlHost: commons-postgresql
-  masterDataDB: '{{ .Release.Name }}_db'
+  # Following general Postgres conventions of lower case
+  masterDataDB:  '{{ printf "%s_db" .Release.Name | replace "-" "_" }}'
   masterDataDBPort: 5432
-  masterDataDBUser: '{{ .Release.Name }}_db_user'
+  masterDataDBUser: '{{ printf "%s_db_user" .Release.Name | replace "-" "_" }}'
   masterDataDBSecret: '{{ .Release.Name }}'
-  masterDataDBUserPasswordKey: '{{ .Release.Name }}_db_user'
+  masterDataDBUserPasswordKey: '{{ .Release.Name }}-db-user'
 
   # Redis
   redisInstallationName: '{{ .Release.Name }}-redis-master'
-  
 
 postgres-init:
   enabled: true
