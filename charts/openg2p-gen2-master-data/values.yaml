@@ -1,6 +1,5 @@
 global:
   masterDataHostname: master-data.qa.openg2p.org
-
   # Database
   postgresqlHost: commons-postgresql
   # Underscores to follow postgresql conventions
