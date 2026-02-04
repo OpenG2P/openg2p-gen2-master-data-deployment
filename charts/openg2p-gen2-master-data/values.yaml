@@ -1,12 +1,12 @@
 global:
-  masterDataHostname: gen2-master-data.dev.openg2p.org
+  masterDataHostname: master-data.qa.openg2p.org
  
   # Database
   postgresqlHost: commons-postgresql
   # Following general Postgres conventions of lower case
-  masterDataDB:  '{{ printf "%s_db" .Release.Name | replace "-" "_" }}'
+  masterDataDB:  '{{ printf "%s" .Release.Name | replace "-" "_" }}'
   masterDataDBPort: 5432
-  masterDataDBUser: '{{ printf "%s_db_user" .Release.Name | replace "-" "_" }}'
+  masterDataDBUser: '{{ printf "%s_user" .Release.Name | replace "-" "_" }}'
   masterDataDBSecret: '{{ .Release.Name }}'
   masterDataDBUserPasswordKey: '{{ .Release.Name }}-db-user'
 
