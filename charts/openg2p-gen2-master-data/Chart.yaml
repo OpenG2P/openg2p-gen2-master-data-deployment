@@ -1,5 +1,5 @@
 apiVersion: v2
-name: openg2p-gen2-master-data
+name: openg2p-master-data
 description: Helm chart for OpenG2P Master Data Service
 type: application
 version: 0.0.0-develop
@@ -14,7 +14,7 @@ dependencies:
 icon: https://openg2p.github.io/openg2p-helm/openg2p-logo.png
 keywords:
   - openg2p
-  - gen2-master-data
+  - master-data
 maintainers:
   - email: info@openg2p.org
     name: OpenG2P
