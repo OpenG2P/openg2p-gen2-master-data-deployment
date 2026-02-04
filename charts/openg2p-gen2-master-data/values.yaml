@@ -3,12 +3,12 @@ global:
 
   # Database
   postgresqlHost: commons-postgresql
-  # Following general Postgres conventions of lower case
-  masterDataDB:  '{{ printf "%s" .Release.Name | replace "-" "_" }}'
+  # Underscores to follow postgresql conventions
+  masterDataDB:  '{{ printf "%s_master_data" .Release.Name | replace "-" "_" }}'
   masterDataDBPort: 5432
-  masterDataDBUser: '{{ printf "%s_user" .Release.Name | replace "-" "_" }}'
-  masterDataDBSecret: '{{ .Release.Name }}'
-  masterDataDBUserPasswordKey: '{{ .Release.Name }}-db-user'
+  masterDataDBUser: '{{ printf "%s_master_data_user" .Release.Name | replace "-" "_" }}'
+  masterDataDBSecret: '{{ .Release.Name }}-master-data'
+  masterDataDBUserPasswordKey: '{{ .Release.Name }}-master-data-db-user'
 
 postgres-init:
   enabled: true
