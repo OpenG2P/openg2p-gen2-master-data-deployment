@@ -7,6 +7,8 @@ on:
     branches-ignore:
       - main
 
+  workflow_dispatch:
+
 jobs:
   generate-charts:
     runs-on: ubuntu-latest
