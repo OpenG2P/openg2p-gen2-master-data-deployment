@@ -1,6 +1,6 @@
 apiVersion: v2
 name: openg2p-gen2-master-data
-description: Helm chart for OpenG2P Gen2 Master Data Service
+description: Helm chart for OpenG2P Master Data Service
 type: application
 version: 0.0.0-develop
 dependencies:
@@ -20,5 +20,5 @@ maintainers:
     name: OpenG2P
 icon: https://openg2p.github.io/openg2p-helm/openg2p-logo.png
 annotations:
-  catalog.cattle.io/display-name: "OpenG2P Gen2 Master Data"
+  catalog.cattle.io/display-name: "OpenG2P Master Data"
   openg2p.org/add-to-rancher: ""
