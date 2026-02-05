@@ -3,11 +3,11 @@ global:
   # Database
   postgresqlHost: commons-postgresql
   # Underscores to follow postgresql conventions
-  masterDataDB:  '{{ printf "%s_master_data" .Release.Name | replace "-" "_" }}'
+  masterDataDB:  '{{ if eq .Release.Name "master-data" }}master_data{{ else }}{{ printf "%s_master_data" .Release.Name | replace "-" "_" }}{{ end }}'
   masterDataDBPort: 5432
-  masterDataDBUser: '{{ printf "%s_master_data_user" .Release.Name | replace "-" "_" }}'
-  masterDataDBSecret: '{{ .Release.Name }}-master-data'
-  masterDataDBUserPasswordKey: '{{ .Release.Name }}-master-data-db-user'
+  masterDataDBUser: '{{ if eq .Release.Name "master-data" }}master_data_user{{ else }}{{ printf "%s_master_data_user" .Release.Name | replace "-" "_" }}{{ end }}'
+  masterDataDBSecret: '{{ if eq .Release.Name "master-data" }}master-data{{ else }}{{ .Release.Name }}-master-data{{ end }}'
+  masterDataDBUserPasswordKey: '{{ if eq .Release.Name "master-data" }}master-data-db-user{{ else }}{{ .Release.Name }}-master-data-db-user{{ end }}'
 
 postgres-init:
   enabled: true
