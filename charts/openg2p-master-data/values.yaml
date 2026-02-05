@@ -3,6 +3,8 @@ global:
   # Database
   postgresqlHost: commons-postgresql
   # Underscores to follow postgresql conventions
+  # The complicated logic below is just to ensure that when chart is installed
+  # as master-data, we don't want the database to be called master_data_master_data
   masterDataDB:  '{{ if eq .Release.Name "master-data" }}master_data{{ else }}{{ printf "%s_master_data" .Release.Name | replace "-" "_" }}{{ end }}'
   masterDataDBPort: 5432
   masterDataDBUser: '{{ if eq .Release.Name "master-data" }}master_data_user{{ else }}{{ printf "%s_master_data_user" .Release.Name | replace "-" "_" }}{{ end }}'
