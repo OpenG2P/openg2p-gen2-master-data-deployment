@@ -14,7 +14,7 @@ global:
 postgres-init:
   enabled: true
   postgresql:
-    host: '{{ .Values.global.postgresqlHost }}'
+    host: '{{ tpl .Values.global.postgresqlHost $ }}'
     port: 5432
     existingSecret: commons-postgresql
     existingSecretPostgresPasswordKey: postgres-password
@@ -85,7 +85,7 @@ masterDataAPI:
         credentialName: ""
 
   envVars:
-    GEN2_MASTER_DATA_API_DB_HOSTNAME: '{{ .Values.global.postgresqlHost }}'
+    GEN2_MASTER_DATA_API_DB_HOSTNAME: '{{ tpl .Values.global.postgresqlHost $ }}'
     GEN2_MASTER_DATA_API_DB_DBNAME: '{{ tpl .Values.global.masterDataDB $ }}'
     GEN2_MASTER_DATA_API_DB_PORT: '{{ .Values.global.masterDataDBPort }}'
     GEN2_MASTER_DATA_API_DB_USERNAME: '{{ tpl .Values.global.masterDataDBUser $ }}'
